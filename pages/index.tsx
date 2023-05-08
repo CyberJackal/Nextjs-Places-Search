@@ -53,7 +53,7 @@ export const getServerSideProps: GetServerSideProps = async ({ res, query }) => 
     'public, s-maxage=60, stale-while-revalidate=600',
   );
 
-  const searchQuery = String(query.query);
+  const searchQuery = query.query?String(query.query):null;
   let data;
 
   if(searchQuery){
